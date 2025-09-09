@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Netflix Tamil - MoviesNewHDTamil</title>
   <style>
-    /* Reset & Fonts */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -14,7 +14,7 @@
     }
 
     body {
-      background-color: #000;
+      background: url("https://i.ibb.co/55hL9FV/netflix-bg.jpg") no-repeat center center/cover;
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -23,63 +23,108 @@
       min-height: 100vh;
       text-align: center;
       padding: 20px;
+      position: relative;
     }
 
-    header {
-      margin-bottom: 30px;
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 0;
+    }
+
+    header, .content, footer {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #e50914; /* Netflix Red */
       font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+      animation: fadeInDown 1.5s ease;
     }
 
     header p {
       font-size: 1.2rem;
-      color: #bbb;
+      color: #ddd;
       margin-top: 10px;
+      animation: fadeIn 2s ease;
     }
 
     .content {
-      max-width: 600px;
+      max-width: 700px;
+      margin-top: 40px;
+      background: rgba(0,0,0,0.6);
+      padding: 25px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+      animation: fadeInUp 2s ease;
     }
 
     .content h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
     }
 
     .content p {
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 1.1rem;
+      line-height: 1.6;
       color: #ccc;
     }
 
     .btn {
       display: inline-block;
       margin-top: 30px;
-      padding: 15px 30px;
+      padding: 15px 35px;
       background: #e50914;
       color: #fff;
       font-size: 1.2rem;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 8px;
       text-decoration: none;
-      transition: 0.3s;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 15px rgba(229,9,20,0.6);
     }
 
     .btn:hover {
       background: #f40612;
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(229,9,20,0.9);
     }
 
     footer {
       margin-top: 50px;
       font-size: 0.9rem;
-      color: #777;
+      color: #aaa;
+      animation: fadeIn 2.5s ease;
     }
 
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile */
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -103,15 +148,15 @@
   <div class="content">
     <h2>Watch the Latest Tamil Movies & Webseries</h2>
     <p>
-      Get instant updates of new Tamil movies, dubbed releases, and trending webseries.  
-      Join our Telegram channel to watch in HD – all for free, updated daily.  
+      Enjoy unlimited Tamil movies, dubbed releases, and trending webseries.  
+      Join our Telegram channel for HD quality updates, daily uploads, and exclusive collections.  
     </p>
 
     <a href="https://t.me/+AfG0_3x4JicwMjc1" target="_blank" class="btn">🚀 Join Telegram Channel</a>
   </div>
 
   <footer>
-    <p>© 2025 MoviesNewHDTamil • Netflix Tamil Style Landing Page</p>
+    <p>© 2025 MoviesNewHDTamil • Premium Netflix Tamil Style</p>
   </footer>
 </body>
 </html>
